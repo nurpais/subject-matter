@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-dark bg-white text-lg font-medium font-dazzed;
+    -webkit-font-smoothing: antialiased;
+  }
+}

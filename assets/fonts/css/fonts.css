@@ -1,0 +1,45 @@
+/*-----------------------*\
+    Dazzed
+\*-----------------------*/
+
+@font-face {
+  font-family: 'Dazzed';
+  src: url('../Dazzed/Dazzed-Medium.eot');
+  src:
+    local('../Dazzed/Dazzed Medium'),
+    local('../Dazzed/Dazzed-Medium'),
+    url('../Dazzed/Dazzed-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../Dazzed/Dazzed-Medium.woff2') format('woff2'),
+    url('../Dazzed/Dazzed-Medium.woff') format('woff'),
+    url('../Dazzed/Dazzed-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dazzed';
+  src: url('../Dazzed/Dazzed-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*-----------------------*\
+   Tobias
+\*-----------------------*/
+
+@font-face {
+  font-family: 'Tobias';
+  src: url('../Tobias/Tobias-Light.eot');
+  src:
+    local('../Tobias/Tobias Light'),
+    local('Tobias-Light'),
+    url('../Tobias/Tobias-Light.eot?#iefix') format('../Tobias/embedded-opentype'),
+    url('../Tobias/Tobias-Light.woff2') format('woff2'),
+    url('../Tobias/Tobias-Light.woff') format('woff'),
+    url('../Tobias/Tobias-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
