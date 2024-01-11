@@ -4,7 +4,11 @@
 
 @layer base {
   body {
-    @apply text-dark bg-white text-lg font-medium font-dazzed;
+    @apply bg-white font-dazzed text-lg font-medium text-dark md:text-xl;
     -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    @apply transition-colors hover:text-primary;
   }
 }

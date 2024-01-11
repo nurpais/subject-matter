@@ -1,9 +1,10 @@
-import { CommonProps } from '@/@types/common';
+import { CommonProps } from '@/@types/common'
+import clsx from 'clsx'
 
 interface ContainerProps extends CommonProps {}
 
-const Container = ({ children }: ContainerProps) => {
-  return <div className="px-2.5 md:px-5 mx-auto max-w-[1400px]">{children}</div>;
-};
+const Container = ({ children, className }: ContainerProps) => {
+  return <div className={clsx('mx-auto max-w-[1400px] px-2.5 md:px-5', className)}>{children}</div>
+}
 
-export default Container;
+export default Container
