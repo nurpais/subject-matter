@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/assets/styles/app.css'
 import Footer from '@/components/template/Footer'
+import Button from '@/components/ui/Button'
 
 export const metadata: Metadata = {
   title: 'Subject Matter | Web Development Specialists - Subject Matter',
@@ -12,6 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <div className="fixed right-2.5 top-[160px] sm:top-[200px] md:right-5 md:top-5">
+          <Button>Menu</Button>
+        </div>
         {children}
         <Footer />
       </body>
