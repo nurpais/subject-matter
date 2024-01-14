@@ -1,10 +1,16 @@
 import Link from 'next/link'
 import React from 'react'
 import Container from '../Container'
+import { CommonProps } from '@/@types/common'
+import clsx from 'clsx'
 
-const Footer = () => {
+interface FooterProps extends CommonProps {
+  variant?: 'light' | 'dark'
+}
+
+const Footer = ({ variant = 'light' }: FooterProps) => {
   return (
-    <footer className="font-medium">
+    <footer className={clsx('font-medium', variant === 'light' ? 'text-dark' : 'text-white')}>
       <Container className="flex flex-col gap-1 py-5 md:flex-row md:justify-between">
         <p>
           Subject Matter <sup>&copy;</sup>
