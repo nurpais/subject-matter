@@ -12,13 +12,13 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>
-      <div className="fixed  right-2.5 top-[160px] sm:top-[200px] md:right-5 md:top-5">
+      <div className="fixed right-2.5 top-[160px] z-50 sm:top-[200px] md:right-5 md:top-5">
         <Button onClick={() => setIsOpen(true)}>Menu</Button>
       </div>
 
       <nav
         className={clsx(
-          'fixed  inset-0 flex flex-col bg-dark transition-all',
+          'fixed inset-0 z-50 flex flex-col bg-dark transition-all',
           isOpen ? 'visible opacity-100' : 'invisible opacity-0',
         )}
       >
