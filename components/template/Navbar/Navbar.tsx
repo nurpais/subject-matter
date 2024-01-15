@@ -32,17 +32,29 @@ const Navbar = () => {
 
           <ul className="mt-5 space-y-5 text-white">
             <li>
-              <Link href="/about" className="font-tobias text-[70px] leading-[0.8em] md:text-[140px] lg:text-[200px]">
+              <Link
+                href="/about"
+                className="font-tobias text-[70px] leading-[0.8em] md:text-[140px] lg:text-[200px]"
+                onClick={() => setIsOpen(false)}
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link href="/work" className="font-tobias text-[70px] leading-[0.8em] md:text-[140px] lg:text-[200px]">
+              <Link
+                href="/work"
+                className="font-tobias text-[70px] leading-[0.8em] md:text-[140px] lg:text-[200px]"
+                onClick={() => setIsOpen(false)}
+              >
                 Work
               </Link>
             </li>
             <li>
-              <Link href="/contact" className="font-tobias text-[70px] leading-[0.8em] md:text-[140px] lg:text-[200px]">
+              <Link
+                href="/contact"
+                className="font-tobias text-[70px] leading-[0.8em] md:text-[140px] lg:text-[200px]"
+                onClick={() => setIsOpen(false)}
+              >
                 Contact
               </Link>
             </li>
