@@ -24,12 +24,12 @@ const Navbar = () => {
 
       <nav
         className={clsx(
-          'fixed inset-0 z-50 flex flex-col bg-dark transition-all',
+          'fixed inset-0 z-50 flex flex-col overflow-auto bg-dark transition-all',
           isOpen ? 'visible opacity-100' : 'invisible opacity-0',
         )}
       >
         <Container className="relative flex-auto">
-          <div className="right-0 top-0 flex w-full justify-between gap-5 px-2.5 py-5 md:absolute md:justify-end">
+          <div className="right-0 top-0 flex w-full justify-between gap-5 px-2.5 py-5 md:fixed md:justify-end">
             <Link href="/" onClick={() => setIsOpen(false)}>
               <Button variant="outline">Home</Button>
             </Link>
