@@ -1,19 +1,25 @@
 'use client'
 
-import { CommonProps } from '@/@types/common'
 import Button from '@/components/ui/Button'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useContext } from 'react'
 import Footer from '../Footer'
 import Container from '../Container'
+import { NavbarContext } from '@/context/NavbarContext'
+import NavbarTriggerBtn from './NavbarTriggerBtn'
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const navbarContext = useContext(NavbarContext)
+
+  if (!navbarContext) return null
+
+  const { isOpen, setIsOpen } = navbarContext
+
   return (
     <>
-      <div className="fixed right-2.5 top-[160px] z-50 sm:top-[200px] md:right-5 md:top-5">
-        <Button onClick={() => setIsOpen(true)}>Menu</Button>
+      <div className="fixed right-2.5 top-[160px] z-50 hidden sm:top-[200px] md:right-5 md:top-5 md:block">
+        <NavbarTriggerBtn />
       </div>
 
       <nav
@@ -23,7 +29,7 @@ const Navbar = () => {
         )}
       >
         <Container className="relative flex-auto">
-          <div className="right-0 top-0 flex w-full justify-between gap-5 p-5 md:absolute md:justify-end">
+          <div className="right-0 top-0 flex w-full justify-between gap-5 px-2.5 py-5 md:absolute md:justify-end">
             <Link href="/" onClick={() => setIsOpen(false)}>
               <Button variant="outline">Home</Button>
             </Link>

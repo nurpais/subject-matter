@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import '@/assets/styles/app.css'
 import Footer from '@/components/template/Footer'
-import Button from '@/components/ui/Button'
 import Navbar from '@/components/template/Navbar'
+import NavbarContextProvider from '@/context/NavbarContext'
 
 export const metadata: Metadata = {
   title: 'Subject Matter | Web Development Specialists - Subject Matter',
@@ -14,9 +14,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <NavbarContextProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </NavbarContextProvider>
       </body>
     </html>
   )
