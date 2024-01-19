@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         primary: '#D6DE31',
         dark: '#302F26',
+        orange: '#F26135',
       },
     },
     fontFamily: {

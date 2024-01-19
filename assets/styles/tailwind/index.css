@@ -4,11 +4,15 @@
 
 @layer base {
   body {
-    @apply bg-white font-dazzed text-lg font-medium text-dark md:text-xl;
+    @apply bg-white font-dazzed text-[18px] font-medium leading-tight text-dark md:text-[20px];
     -webkit-font-smoothing: antialiased;
   }
 
   a {
     @apply transition-colors hover:text-primary;
+  }
+
+  .heading-primary {
+    @apply font-tobias text-[84px] font-light leading-none md:text-[140px] lg:text-[220px];
   }
 }
