@@ -22,7 +22,7 @@ const AboutPage = async () => {
       <Container className="pb-[200px] md:pb-[280px]">
         <h1 className="heading-primary">{heading}</h1>
 
-        <div className="sticky top-5 mt-20 flex justify-end md:hidden">
+        <div className="sticky top-5 z-40 mt-20 flex justify-end md:hidden">
           <NavbarTriggerBtn />
         </div>
 

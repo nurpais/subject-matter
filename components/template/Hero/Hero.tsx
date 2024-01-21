@@ -8,7 +8,7 @@ const Hero = () => {
       <p className="block pt-2.5 text-[25vw] font-normal leading-none md:pt-5 md:text-[160px] lg:text-[248px]">
         Subject
       </p>
-      <div className="sticky top-5 mt-14 flex justify-end md:hidden">
+      <div className="sticky top-5 z-40 mt-14 flex justify-end md:hidden">
         <NavbarTriggerBtn />
       </div>
 

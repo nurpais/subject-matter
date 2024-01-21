@@ -15,4 +15,8 @@
   .heading-primary {
     @apply font-tobias text-[84px] font-light leading-none md:text-[140px] lg:text-[220px];
   }
+
+  .heading-secondary {
+    @apply font-tobias text-[35px] font-light leading-none md:text-[45px];
+  }
 }
