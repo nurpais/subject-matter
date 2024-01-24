@@ -12,6 +12,11 @@ export const work = defineType({
       validation: (Rule: Rule) => Rule.required().error('Required'),
     },
     {
+      title: 'Color',
+      name: 'color',
+      type: 'string',
+    },
+    {
       title: 'Main image',
       name: 'mainImage',
       type: 'image',

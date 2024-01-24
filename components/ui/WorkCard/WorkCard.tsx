@@ -4,38 +4,33 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-type Colors = 'green' | 'pink' | 'blue' | 'yellow' | 'orange'
+// green: '#397C49',
+// pink: '#F090A1',
+// blue: '#007E94',
+// yellow: '#D6DE31',
+// orange: '#F26135',
+
+type Tags = { name: string }
 
 interface WorkCardProps extends CommonProps {
   title: string
   desc: string
-  tags: string[]
+  tags: Tags[]
   img: string
   link: string
-  color?: Colors
+  color?: string
 }
 
 const WorkCard = (props: WorkCardProps) => {
-  const { title, tags, img, link, desc, color = 'orange' } = props
-
-  const bgColor = () => {
-    let colors = {
-      green: '#397C49',
-      pink: '#F090A1',
-      blue: '#007E94',
-      yellow: '#D6DE31',
-      orange: '#F26135',
-    }
-    return colors[color]
-  }
+  const { title, tags, img, link, desc, color = '#F26135' } = props
 
   return (
     <div className="group relative overflow-hidden rounded-[10px] border border-dark p-2.5 md:p-5">
       {/* Circles */}
       <div
         aria-hidden="true"
-        className="absolute right-3 top-4 z-10 h-6 w-6 rounded-[60px] transition-all duration-200 ease-in-out group-hover:right-0 group-hover:top-0 group-hover:h-full group-hover:w-full group-hover:rounded-[10px] md:right-5 md:top-5"
-        style={{ backgroundColor: bgColor() }}
+        className="absolute right-3 top-4 z-10 h-6 w-6 rounded-[60px] transition-all duration-200 ease-in-out will-change-auto group-hover:right-0 group-hover:top-0 group-hover:h-full group-hover:w-full group-hover:rounded-[10px] md:right-5 md:top-5"
+        style={{ backgroundColor: color }}
       ></div>
       <div
         aria-hidden="true"
@@ -50,8 +45,8 @@ const WorkCard = (props: WorkCardProps) => {
       {/* Tags */}
       <div className="mb-4 flex flex-wrap gap-[5px] md:gap-2">
         {tags.map((tag) => (
-          <span key={tag} className="rounded-full border border-dark px-2 py-1 text-xs">
-            {tag}
+          <span key={tag.name} className="rounded-full border border-dark px-2 py-1 text-xs">
+            {tag.name}
           </span>
         ))}
       </div>
