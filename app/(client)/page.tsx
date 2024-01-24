@@ -18,6 +18,7 @@ export default function Home() {
               link="https://subjectmatter.co.nz/work/middlehurst"
               tags={['Shopify', 'Theme', 'Development']}
               desc="Our recent work with Middlehurst Station, nestled in New Zealand's Awatere Valley."
+              color="green"
             />
 
             <Image className="mt-5" src="/gif/RISHI_1_Pink.gif" alt="" width="544" height="544" />
@@ -58,6 +59,7 @@ export default function Home() {
                 link="https://subjectmatter.co.nz/work/middlehurst"
                 tags={['Shopify', 'Theme', 'Development']}
                 desc="Our recent work with Middlehurst Station, nestled in New Zealand's Awatere Valley."
+                color="pink"
               />
             </div>
           </div>
@@ -95,6 +97,7 @@ export default function Home() {
               link="https://subjectmatter.co.nz/work/middlehurst"
               tags={['Shopify', 'Theme', 'Development']}
               desc="Our recent work with Middlehurst Station, nestled in New Zealand's Awatere Valley."
+              color="yellow"
             />
           </div>
         </div>
