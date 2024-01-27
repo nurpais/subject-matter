@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 async function getWorks() {
-  const query = `*[_type == 'work'] {title, mainImage, excerpt, slug, color, _createdAt,
+  const query = `*[_type == 'work'] {title, thumbnail, excerpt, slug, color, _createdAt,
     tags[]-> {name}
   } | order(_createdAt asc) [0..3]`
 
@@ -18,6 +18,8 @@ async function getWorks() {
 const Home = async () => {
   const works = await getWorks()
 
+  console.log(urlForImage(works[0]?.thumbnail))
+
   return (
     <Container>
       <Hero />
@@ -27,7 +29,7 @@ const Home = async () => {
           <div>
             <WorkCard
               title={works[0]?.title}
-              img={urlForImage(works[0]?.mainImage)}
+              img={urlForImage(works[0]?.thumbnail)}
               link={`/work/${works[0]?.slug?.current}`}
               tags={works[0]?.tags}
               desc={works[0]?.excerpt}
@@ -68,7 +70,7 @@ const Home = async () => {
             <div className="md:col-span-5">
               <WorkCard
                 title={works[1]?.title}
-                img={urlForImage(works[1].mainImage)}
+                img={urlForImage(works[1].thumbnail)}
                 link={`/work/${works[1]?.slug?.current}`}
                 tags={works[1]?.tags}
                 desc={works[1]?.excerpt}
@@ -106,7 +108,7 @@ const Home = async () => {
           <div className="md:col-span-6 lg:col-span-7">
             <WorkCard
               title={works[2]?.title}
-              img={urlForImage(works[2].mainImage)}
+              img={urlForImage(works[2].thumbnail)}
               link={`/work/${works[2]?.slug?.current}`}
               tags={works[2]?.tags}
               desc={works[2]?.excerpt}

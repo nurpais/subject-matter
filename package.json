@@ -13,7 +13,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.25.0",
     "clsx": "^2.1.0",
-    "gsap": "^3.12.4",
+    "gsap": "^3.12.5",
     "next": "14.0.4",
     "next-sanity": "^7.0.12",
     "react": "^18",

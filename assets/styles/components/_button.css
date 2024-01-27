@@ -3,7 +3,7 @@
 }
 
 .button-solid {
-  @apply border border-dark bg-primary hover:bg-opacity-80;
+  @apply border border-dark bg-primary text-dark hover:bg-opacity-80 hover:text-dark;
 }
 
 .button-outline {

@@ -17,12 +17,29 @@ export const work = defineType({
       type: 'string',
     },
     {
+      title: 'Project link',
+      name: 'projectLink',
+      type: 'string',
+    },
+    {
+      title: 'Thumbnail',
+      name: 'thumbnail',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          title: 'Alt',
+          name: 'alt',
+          type: 'string',
+        },
+      ],
+    },
+    {
       title: 'Main image',
       name: 'mainImage',
       type: 'image',
-      options: {
-        hotspot: true, // <-- Defaults to false
-      },
       fields: [
         {
           title: 'Alt',
@@ -45,10 +62,27 @@ export const work = defineType({
       validation: (Rule: Rule) => Rule.max(200).error('Max 200 characters'),
     },
     {
+      name: 'body',
+      title: 'Body',
+      type: 'array',
+      of: [{ type: 'block' }],
+    },
+    {
       name: 'tags',
       title: 'Tags',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'workTag' }] }],
+    },
+    {
+      name: 'videoLink',
+      title: 'Video link',
+      type: 'string',
+    },
+    {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [{ type: 'image' }],
     },
   ],
 })
