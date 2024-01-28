@@ -21,11 +21,25 @@ interface WorkCardProps extends CommonProps {
   color?: string
 }
 
+const isUrl = (string: string) => {
+  const urlPattern = new RegExp(
+    '^(https?:\\/\\/)?' +
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' +
+      '((\\d{1,3}\\.){3}\\d{1,3}))' +
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' +
+      '(\\?[;&a-z\\d%_.~+=-]*)?' +
+      '(\\#[-a-z\\d_]*)?$',
+    'i',
+  )
+
+  return !!urlPattern.test(string)
+}
+
 const WorkCard = (props: WorkCardProps) => {
   const { title, tags, img, link, desc, color = '#F26135' } = props
 
   return (
-    <div className="group relative overflow-hidden rounded-[10px] border border-dark p-2.5 md:p-5">
+    <div className="group relative flex w-full flex-col overflow-hidden rounded-[10px] border border-dark p-2.5 md:p-5">
       {/* Circles */}
       <div
         aria-hidden="true"
@@ -56,18 +70,24 @@ const WorkCard = (props: WorkCardProps) => {
         width="1000"
         height="1000"
         alt={title}
-        className="relative z-20 w-full transition-transform group-hover:scale-75"
+        className="relative z-20 w-full flex-1 object-cover transition-transform group-hover:scale-75"
       />
 
       <p className="mt-4 text-sm">{desc}</p>
 
       <p className="absolute bottom-5 left-5 z-20 opacity-0 transition-opacity group-hover:opacity-100 group-hover:delay-100">
-        View project
+        {isUrl(link) ? 'Visit' : 'View project'}
       </p>
 
-      <Link href={link} className="absolute inset-0 z-20 block">
-        &nbsp;
-      </Link>
+      {isUrl(link) ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-20 block">
+          &nbsp;
+        </a>
+      ) : (
+        <Link href={link} className="absolute inset-0 z-20 block">
+          &nbsp;
+        </Link>
+      )}
     </div>
   )
 }

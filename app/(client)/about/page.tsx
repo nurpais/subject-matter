@@ -22,8 +22,6 @@ const AboutPage: NextPage = async () => {
 
   const { heading, services, body } = aboutDetails
 
-  console.log(services)
-
   return (
     <BG color="#F26135">
       <Container className="pb-[200px] md:pb-[280px]">

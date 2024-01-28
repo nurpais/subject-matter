@@ -18,8 +18,6 @@ async function getWorks() {
 const Home = async () => {
   const works = await getWorks()
 
-  console.log(urlForImage(works[0]?.thumbnail))
-
   return (
     <Container>
       <Hero />

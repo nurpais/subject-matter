@@ -1,0 +1,21 @@
+.works-grid {
+  @apply grid grid-cols-12 gap-5;
+}
+
+.works-grid > div {
+  @apply col-span-12 flex md:col-span-6;
+}
+
+.works-grid > div:nth-child(3) {
+  @apply self-start lg:col-span-4;
+}
+
+.works-grid > div:nth-child(4) {
+  @apply lg:col-span-8;
+}
+
+.works-grid > div:nth-child(7),
+.works-grid > div:nth-child(8),
+.works-grid > div:nth-child(9) {
+  @apply md:col-span-6 lg:col-span-4;
+}

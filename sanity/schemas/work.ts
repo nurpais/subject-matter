@@ -72,6 +72,7 @@ export const work = defineType({
       title: 'Tags',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'workTag' }] }],
+      validation: (Rule: Rule) => Rule.required().error('Required'),
     },
     {
       name: 'videoLink',
