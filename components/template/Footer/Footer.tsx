@@ -15,7 +15,7 @@ const Footer = ({ variant = 'light' }: FooterProps) => {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {
-          setIsDark(document.body.classList.contains('bg-dark'))
+          setIsDark(document.body.classList.contains('bg--dark'))
         }
       })
     })

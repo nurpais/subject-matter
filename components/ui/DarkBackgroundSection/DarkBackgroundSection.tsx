@@ -23,7 +23,7 @@ const DarkBackgroundSection = ({ children, animate = true }: DarkBackgroundSecti
         end: 'top center',
 
         onEnter: () => {
-          document.body.classList.add('bg-dark')
+          document.body.classList.add('bg--dark')
 
           gsap.to(document.body, {
             backgroundColor: '#302F26',
@@ -31,7 +31,7 @@ const DarkBackgroundSection = ({ children, animate = true }: DarkBackgroundSecti
           })
         },
         onLeaveBack: () => {
-          document.body.classList.remove('bg-dark')
+          document.body.classList.remove('bg--dark')
           gsap.to(document.body, {
             backgroundColor: '#fff',
             duration: animate ? 0.5 : 0,

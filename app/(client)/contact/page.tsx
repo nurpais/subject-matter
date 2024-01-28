@@ -26,7 +26,7 @@ const ContactPage = () => {
     console.log(data)
   }
   return (
-    <DarkBackgroundSection>
+    <DarkBackgroundSection animate={false}>
       <Container className="pb-[120px]">
         <h1 className="heading-primary text-white">Contact</h1>
 
