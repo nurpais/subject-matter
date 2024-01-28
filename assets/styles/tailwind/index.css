@@ -19,4 +19,8 @@
   .heading-secondary {
     @apply font-tobias text-[35px] font-light leading-none md:text-[45px];
   }
+
+  .bg--dark {
+    @apply text-white;
+  }
 }

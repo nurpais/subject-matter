@@ -10,31 +10,8 @@ interface FooterProps extends CommonProps {
 }
 
 const Footer = ({ variant = 'light' }: FooterProps) => {
-  const [isDark, setIsDark] = useState(false)
-  useEffect(() => {
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.attributeName === 'class') {
-          setIsDark(document.body.classList.contains('bg--dark'))
-        }
-      })
-    })
-
-    observer.observe(document.body, { attributes: true })
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
-
   return (
-    <footer
-      className={clsx(
-        'font-medium',
-        variant === 'light' ? 'text-dark' : 'text-white',
-        isDark ? 'text-white' : 'text-dark',
-      )}
-    >
+    <footer className={clsx('font-medium', variant === 'light' ? '' : 'text-white')}>
       <Container className="flex flex-col gap-1 py-5 md:flex-row md:justify-between">
         <p>
           Subject Matter <sup>&copy;</sup>

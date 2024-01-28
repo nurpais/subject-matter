@@ -4,6 +4,7 @@ import NavbarTriggerBtn from '@/components/template/Navbar/NavbarTriggerBtn'
 import { client } from '@/sanity/lib/client'
 import WorkCard from '@/components/ui/WorkCard'
 import { urlForImage } from '@/sanity/lib/image'
+import DarkBackgroundSection from '@/components/ui/DarkBackgroundSection'
 
 async function getWorks() {
   const query = `*[_type == 'work'] {_id, title, projectLink, thumbnail, mainImage, excerpt, slug, color, _createdAt,
@@ -41,6 +42,11 @@ const WorksPage: NextPage = async () => {
           ))}
         </div>
       </main>
+      <DarkBackgroundSection>
+        <section>
+          <h2 className="heading-secondary">Who We Work With</h2>
+        </section>
+      </DarkBackgroundSection>
     </Container>
   )
 }
