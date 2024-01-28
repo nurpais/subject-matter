@@ -6,7 +6,7 @@ interface BGProps extends CommonProps {
   color: string
 }
 
-const BG = ({ children, color }: BGProps) => {
+const BG: React.FC<BGProps> = ({ children, color }) => {
   useBg(color)
   return <div>{children}</div>
 }

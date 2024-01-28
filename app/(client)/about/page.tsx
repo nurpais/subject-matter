@@ -1,21 +1,28 @@
+import { NextPage } from 'next'
 import BG from '@/components/template/BG'
 import Container from '@/components/template/Container'
 import NavbarTriggerBtn from '@/components/template/Navbar/NavbarTriggerBtn'
 import { client } from '@/sanity/lib/client'
 import { PortableText } from '@portabletext/react'
 
-async function getAboutDetails() {
-  const query = `*[_type == 'about'] { heading, services, excerpt, body}`
+interface AboutDetails {
+  heading: string
+  services: string[]
+  body: any
+}
 
-  const data = await client.fetch(query)
-
+async function getAboutDetails(): Promise<AboutDetails> {
+  const query = `*[_type == 'about'] { heading, services, excerpt, body}[0]`
+  const data: AboutDetails = await client.fetch(query)
   return data
 }
 
-const AboutPage = async () => {
-  const aboutDetails = await getAboutDetails()
+const AboutPage: NextPage = async () => {
+  const aboutDetails: AboutDetails = await getAboutDetails()
 
-  const { heading, services, body } = aboutDetails[0]
+  const { heading, services, body } = aboutDetails
+
+  console.log(services)
 
   return (
     <BG color="#F26135">
@@ -32,7 +39,7 @@ const AboutPage = async () => {
               <h2 className="font-tobias text-[35px] font-light leading-none md:text-[45px]">Services</h2>
 
               <ul role="list" className="mt-[180px] font-medium md:mt-[150px]">
-                {services.map((service: string) => (
+                {services.map((service) => (
                   <li key={service}>{service}</li>
                 ))}
               </ul>
