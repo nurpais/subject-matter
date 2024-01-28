@@ -13,7 +13,7 @@
   }
 
   .heading-primary {
-    @apply font-tobias text-[84px] font-light leading-none md:text-[140px] lg:text-[220px];
+    @apply font-tobias text-[84px] font-light leading-none md:text-[140px] lg:text-[200px];
   }
 
   .heading-secondary {
