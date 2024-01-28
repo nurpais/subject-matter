@@ -76,7 +76,7 @@ const WorkCard = (props: WorkCardProps) => {
       <p className="mt-4 text-sm">{desc}</p>
 
       <p className="absolute bottom-5 left-5 z-20 opacity-0 transition-opacity group-hover:opacity-100 group-hover:delay-100">
-        {isUrl(link) ? 'Visit' : 'View project'}
+        {isUrl(link) ? 'Visit Site' : 'View project'}
       </p>
 
       {isUrl(link) ? (

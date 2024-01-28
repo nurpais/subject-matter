@@ -12,7 +12,7 @@ interface DarkBackgroundSection extends CommonProps {
   animate?: boolean
 }
 
-const DarkBackgroundSection = ({ children, animate = true }: DarkBackgroundSection) => {
+const DarkBackgroundSection = ({ className, children, animate = true }: DarkBackgroundSection) => {
   const sectionRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
@@ -40,10 +40,17 @@ const DarkBackgroundSection = ({ children, animate = true }: DarkBackgroundSecti
       })
     })
 
-    return () => ctx.revert()
+    return () => {
+      ctx.revert()
+      document.body.classList.remove('bg--dark')
+    }
   }, [animate])
 
-  return <div ref={sectionRef}>{children}</div>
+  return (
+    <div ref={sectionRef} className={className}>
+      {children}
+    </div>
+  )
 }
 
 export default DarkBackgroundSection

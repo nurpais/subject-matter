@@ -5,6 +5,7 @@ import { client } from '@/sanity/lib/client'
 import WorkCard from '@/components/ui/WorkCard'
 import { urlForImage } from '@/sanity/lib/image'
 import DarkBackgroundSection from '@/components/ui/DarkBackgroundSection'
+import Partners from '@/components/template/Partners'
 
 async function getWorks() {
   const query = `*[_type == 'work'] {_id, title, projectLink, thumbnail, mainImage, excerpt, slug, color, _createdAt,
@@ -17,6 +18,10 @@ async function getWorks() {
 
 const WorksPage: NextPage = async () => {
   const works = await getWorks()
+
+  if (!works) {
+    return <div>Loading...</div>
+  }
 
   return (
     <Container className="pb-[200px] md:pb-[280px]">
@@ -42,11 +47,11 @@ const WorksPage: NextPage = async () => {
           ))}
         </div>
       </main>
-      <DarkBackgroundSection>
-        <section>
-          <h2 className="heading-secondary">Who We Work With</h2>
-        </section>
-      </DarkBackgroundSection>
+      <div className="mt-[200px]">
+        <DarkBackgroundSection>
+          <Partners works={works} />
+        </DarkBackgroundSection>
+      </div>
     </Container>
   )
 }
