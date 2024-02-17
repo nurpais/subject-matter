@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="fixed right-2.5 top-[160px] z-50 hidden sm:top-[200px] md:right-5 md:top-5 md:block">
+      <div className="fixed right-2 top-[160px] z-50 hidden sm:top-[200px] md:right-2.5  md:top-5 md:block">
         <NavbarTriggerBtn />
       </div>
 
